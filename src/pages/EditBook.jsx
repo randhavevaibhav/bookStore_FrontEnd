@@ -7,15 +7,15 @@ import { useNavigate,useParams } from 'react-router-dom';
 const EditBook = () => {
     const[title, setTitle] = useState('');
     const[author, setAuthor] = useState('');
-    const[publishYear, setPublishYear] = useState(0);
+    const[publishYear, setPublishYear] = useState("");
     const[loading, setLoading] = useState(false);
-    const navigate = useNavigate();
-    const {id} = useParams();
+    const navigate = useNavigate("/bookStore_FrontEnd");
+    const {id} = useParams("");
 
     useEffect(()=>{
         setLoading(true);
 
-        axios.get(`http://localhost:5555/books/${id}`)
+        axios.get(`https://bookstore-backend-ns5j.onrender.com/books/${id}`)
         .then((response)=>{
             setAuthor(response.data.author);
             setPublishYear(response.data.publishYear);
@@ -46,10 +46,10 @@ const EditBook = () => {
        
         setLoading(true);
 
-        axios.put(`http://localhost:5555/books/${id}`,data)
+        axios.put(`https://bookstore-backend-ns5j.onrender.com/books/${id}`,data)
         .then(()=>{
             setLoading(false);
-            navigate("/");
+            navigate("/bookStore_FrontEnd");
 
         })
         .catch((error)=>{

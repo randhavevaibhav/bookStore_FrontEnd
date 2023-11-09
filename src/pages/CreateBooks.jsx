@@ -24,10 +24,10 @@ const CreateBooks = () => {
        
         setLoading(true);
 
-        axios.post(`http://localhost:5555/books`,data)
+        axios.post(`https://bookstore-backend-ns5j.onrender.com/books`,data)
         .then(()=>{
             setLoading(false);
-            navigate("/");
+            navigate("/bookStore_FrontEnd");
 
         })
         .catch((error)=>{

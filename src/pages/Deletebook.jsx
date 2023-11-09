@@ -13,10 +13,10 @@ const Deletebook = () => {
     const handleDeleteBook = ()=>{
         setLoading(true);
 
-        axios.delete(`http://localhost:5555/books/${id}`)
+        axios.delete(`https://bookstore-backend-ns5j.onrender.com/books/${id}`)
         .then(()=>{
             setLoading(false);
-            navigate('/');
+            navigate('/bookStore_FrontEnd');
 
         })
         .catch((error)=>{

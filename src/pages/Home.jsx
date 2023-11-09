@@ -14,7 +14,7 @@ const Home = () => {
   const [showType, setShowType] = useState("table");
   useEffect(() => {
     setloading(true);
-    fetch("http://localhost:5555/books")
+    fetch("https://bookstore-backend-ns5j.onrender.com/books")
       .then((response) => response.json())
       .then((data) => {
         setBooks(data.data);
@@ -48,7 +48,7 @@ const Home = () => {
       </div>
       <div className="flex justify-between items-center">
         <h1 className="text-3xl my-8">Book List</h1>
-        <Link to="/books/create">
+        <Link to="/bookStore_FrontEnd/books/create">
           <MdOutlineAddBox className="text-sky-800 text-4xl"></MdOutlineAddBox>
         </Link>
       </div>
